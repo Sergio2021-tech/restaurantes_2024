@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Restaurante Internacional S.A</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/lux/bootstrap.min.css" >
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #7867a0">
+      <div class="container-fluid ">
+        <a class="navbar-brand" href="#">S.Castillo Bienvenido</a>
+        <button class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav" 
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          data-target="#opciones">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+    <div class="collapse navbar-collapse" id="opciones" >   
+      <ul class="navbar-nav ml-auto" >
+
+      <ul class="navbar-nav" >
+        <li class="nav-item" >
+          <a class="nav-link " href="/profile">Principal</a>
+        </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/signin">Ingresar</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="/signup">Registrarse</a>
+      </li>
+      </ul>
+    </div>
+  </nav>  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+        <div class="collapse navbar-collapse" id="navbarNav" color="black">
+                    <ul class="navbar-nav ml-auto">
+            <%if (user){ %>
+              <li class="nav-item">
+                <a class="nav-link" href="/Profile">Perfil</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link " href="/Logout">Salir</a>
+              </li>
+              <% }  else {%>
+
+                <li class="nav-item">
+                  <a class="nav-link " href="/profile">Principal</a>
+                </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/signin">Ingresar</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link " href="/signup">Registrarse</a>
+              </li>
+
+              <% } %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="container">
+          <%if (signinMessage2.length>0) { %>
+       <div class="alert alert-danger">
+         <%= signinMessage2 %>
+    </div>
+  
+    <% } %>
+    <%if (signupMessage.length>0) { %>
+      <div class="alert alert-danger">
+        <%= signupMessage %>
+      </div>
+  
+    <% } %>
+    <%- body %>
+  
+</body>
+</html>
